@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Movease.Providers;
 using Movease.Models;
+using Movease.Data;
 
 namespace Movease
 {
