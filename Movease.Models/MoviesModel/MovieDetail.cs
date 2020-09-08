@@ -1,19 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Movease.Data
+namespace Movease.Models.MoviesModel
 {
-    public class Movie
+    public class MovieDetail
     {
-        [Key]
-        public int MovieId { get; set; }
-
         [JsonProperty("Title")]
         public string Title { get; set; }
 
@@ -52,7 +47,5 @@ namespace Movease.Data
 
         [JsonProperty("Awards")]
         public string Awards { get; set; }
-
-        
     }
 }
