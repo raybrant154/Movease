@@ -32,8 +32,12 @@ namespace Movease.Data
         {
             return new ApplicationDbContext();
         }
+
         //public DbSet<Note> Notes { get; set; }
         public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<User> UserProfile { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
