@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Movease.Data\Movease.Data.csproj">
+      <Project>{52225A26-0BFB-4FCA-B3B9-35EA542A2EAB}</Project>
+      <Name>Movease.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Movease.Models\Movease.Models.csproj">
+      <Project>{4845386C-7A80-492E-88DC-570A61E94B09}</Project>
+      <Name>Movease.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
