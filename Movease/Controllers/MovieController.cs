@@ -15,8 +15,8 @@ namespace Movease.Controllers
 
         public IHttpActionResult Get(string t)
         {
-            MovieService movieService = new MovieService(t);
-            Movie movieResponse = movieService.GetMovieAsync("http://www.omdbapi.com/?apikey=223a36fc&t=").Result;
+            MovieService movieService = new MovieService();
+            Movie movieResponse = movieService.GetMovieAsync(t).Result;
             if (movieResponse != null)
             {
                 //Console.WriteLine(response.Content.ReadAsStringAsync().Result);
