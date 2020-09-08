@@ -37,6 +37,7 @@ namespace Movease.Data
         public DbSet<Comment> Comments { get; set; }
 
         public DbSet<User> UserProfile { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

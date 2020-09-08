@@ -1,4 +1,5 @@
 ﻿using Movease.Data;
+using Movease.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,22 +12,23 @@ namespace Movease.Controllers
 {
     public class MovieController : ApiController
     {
-        static void Main(string[] args)
+
+        public IHttpActionResult Get(string t)
         {
-            HttpClient httpClient = new HttpClient();
-
-            Task<HttpResponseMessage> getTask = httpClient.GetAsync("http://www.omdbapi.com/?apikey=223a36fc");
-
-            HttpResponseMessage response = getTask.Result;
-
-            HttpResponseMessage getResponse = httpClient.GetAsync("http://www.omdbapi.com/?apikey=223a36fc").Result;
-
-            if (response.IsSuccessStatusCode)
+            MovieService movieService = new MovieService(t);
+            Movie movieResponse = movieService.GetMovieAsync("http://www.omdbapi.com/?apikey=223a36fc&t=").Result;
+            if (movieResponse != null)
             {
-                Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+                //Console.WriteLine(response.Content.ReadAsStringAsync().Result);
 
-                Movie movieResponse = response.Content.ReadAsAsync<Movie>().Result;
+                //Movie movieResponse = response.Content.ReadAsAsync<Movie>().Result;
+
+                return Ok(movieResponse);
             }
+
+            return BadRequest(ModelState);
         }
+
+
     }
 }
