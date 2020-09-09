@@ -24,7 +24,7 @@ namespace Movease.Service
             //HttpResponseMessage getResponse = httpClient.GetAsync("http://www.omdbapi.com/?apikey=223a36fc&t=" + t).Result;
         }
 
-        public async Task<Movie> GetMovieAsync(string t)
+        public async Task<Movie> GetMovieFromAPIAsync(string t)
         {
             Task<HttpResponseMessage> getTask = _httpClient.GetAsync("http://www.omdbapi.com/?apikey=223a36fc&t=" + t);
 
@@ -49,5 +49,32 @@ namespace Movease.Service
         //{
             
         //}
+
+        public bool CreateMovie(MovieCreate model)
+        {
+            var entity =
+                new Movie()
+                {
+                    Title = model.Title,
+                    Year = model.Year,
+                    Rated = model.Rated,
+                    Released = model.Released,
+                    Runtime = model.Runtime,
+                    Genre = model.Genre,
+                    Director = model.Director,
+                    Writer = model.Writer,
+                    Actors = model.Actors,
+                    Plot = model.Plot,
+                    Language = model.Language,
+                    Country = model.Country,
+                    Awards = model.Awards
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Movies.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
