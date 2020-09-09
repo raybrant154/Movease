@@ -3,7 +3,7 @@ namespace Movease.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class movieclass : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {

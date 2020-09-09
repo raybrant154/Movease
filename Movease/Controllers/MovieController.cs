@@ -16,12 +16,12 @@ namespace Movease.Controllers
 {
     public class MovieController : ApiController
     { // google routing data asp .net
-        private MovieService CreateMovieService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var movieService = new MovieService(userId);
-            return movieService;
-        }
+        //private MovieService CreateMovieService()
+        //{
+        //    var userId = Guid.Parse(User.Identity.GetUserId());
+        //    var movieService = new MovieService(userId);
+        //    return movieService;
+        //}
 
         [HttpGet]
         [Route("api/Movie/{t}")]
@@ -45,9 +45,9 @@ namespace Movease.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateMovieService();
-            if (!service.CreateMovie(movie))
-                return InternalServerError();
+            ////var service = CreateMovieService();
+            //if (!service.CreateMovie(movie))
+            //    return InternalServerError();
 
             return Ok();
         }
