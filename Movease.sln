@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movease.Service", "Movease.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movease.Models", "Movease.Models\Movease.Models.csproj", "{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movease.Data", "Movease.Data\Movease.Data.csproj", "{9079F50A-1DCD-41C3-9647-E3C910806032}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9079F50A-1DCD-41C3-9647-E3C910806032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9079F50A-1DCD-41C3-9647-E3C910806032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9079F50A-1DCD-41C3-9647-E3C910806032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9079F50A-1DCD-41C3-9647-E3C910806032}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

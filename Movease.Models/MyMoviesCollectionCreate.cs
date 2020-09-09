@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Movease.Models
 {
-    public class MoveaseCollectionCreate
+    public class MyMoviesCollectionCreate
     {
         [Required]
         [MinLength(2, ErrorMessage = "Please enter 2 characters.")]

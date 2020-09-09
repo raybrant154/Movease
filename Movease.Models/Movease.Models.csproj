@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MoveaseCollectionCreate.cs" />
-    <Compile Include="MoveaseListCollection.cs" />
+    <Compile Include="MyMoviesCollectionCreate.cs" />
+    <Compile Include="MyMoviesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

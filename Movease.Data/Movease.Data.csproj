@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EEF4B9F1-0BAD-4976-A8A7-1E349B84FC6F}</ProjectGuid>
+    <ProjectGuid>{9079F50A-1DCD-41C3-9647-E3C910806032}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Movease.Service</RootNamespace>
-    <AssemblyName>Movease.Service</AssemblyName>
+    <RootNamespace>Movease.Data</RootNamespace>
+    <AssemblyName>Movease.Data</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,7 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyMoviesService.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="MyMovies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
