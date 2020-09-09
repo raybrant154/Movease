@@ -4,10 +4,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-
     <ProjectGuid>{9079F50A-1DCD-41C3-9647-E3C910806032}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <ProjectGuid>{52225A26-0BFB-4FCA-B3B9-35EA542A2EAB}</ProjectGuid>
+    <ProjectGuid>{9079F50A-1DCD-41C3-9647-E3C910806032}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Movease.Data</RootNamespace>
