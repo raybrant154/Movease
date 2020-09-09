@@ -103,6 +103,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202009091545007_movieclass.cs" />
+    <Compile Include="Migrations\202009091545007_movieclass.Designer.cs">
+      <DependentUpon>202009091545007_movieclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
@@ -110,6 +115,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009091545007_movieclass.resx">
+      <DependentUpon>202009091545007_movieclass.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

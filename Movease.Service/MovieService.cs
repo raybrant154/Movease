@@ -12,37 +12,29 @@ namespace Movease.Service
     public class MovieService
     {
         private readonly HttpClient _httpClient = new HttpClient();
+        private readonly Guid _userId;
 
-        public MovieService(/*string t*/)
+        public MovieService(Guid userId)
         {
-            //HttpClient httpClient = new HttpClient();
-
-            //Task<HttpResponseMessage> getTask = httpClient.GetAsync("http://www.omdbapi.com/?apikey=223a36fc&t=" + t);
-
-            //HttpResponseMessage response = getTask.Result;
-
-            //HttpResponseMessage getResponse = httpClient.GetAsync("http://www.omdbapi.com/?apikey=223a36fc&t=" + t).Result;
+            _userId = userId;
         }
 
-        public async Task<Movie> GetMovieFromAPIAsync(string t)
+        public MovieService() { }
+
+        public async Task<MovieDetail> GetMovieFromAPIAsync(string t)
         {
             Task<HttpResponseMessage> getTask = _httpClient.GetAsync("http://www.omdbapi.com/?apikey=223a36fc&t=" + t);
 
             HttpResponseMessage response = getTask.Result;
 
-
-            //HttpResponseMessage response = await _httpClient.GetAsync(url);
-
             if (response.IsSuccessStatusCode)
             {
-                Movie movie = await response.Content.ReadAsAsync<Movie>(); 
+                MovieDetail movie = await response.Content.ReadAsAsync<MovieDetail>(); 
                 return movie;
             }
-            else
-            {
 
             return null;
-            }
+
         }
 
         //public MovieDetail GetMovieByTitleAsync(string title)
@@ -73,7 +65,8 @@ namespace Movease.Service
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Movies.Add(entity);
-                return ctx.SaveChanges() == 1;
+                var changes = ctx.SaveChanges();
+                   return changes == 1;
             }
         }
     }
