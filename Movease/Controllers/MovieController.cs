@@ -1,4 +1,5 @@
-﻿using Movease.Data;
+﻿using Microsoft.AspNet.Identity;
+using Movease.Data;
 using Movease.Models.MoviesModel;
 using Movease.Service;
 using System;
@@ -13,15 +14,24 @@ namespace Movease.Controllers
 {
     public class MovieController : ApiController
     { // google routing data asp .net
-        public IHttpActionResult Get (string t) //This Method gets a movie from the database
+        private MovieService CreateMovieService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var movieService = new MovieService(userId);
+            return movieService;
+        }
+
+        [HttpGet]
+        [Route("api/Movie/{t}")]
+        public IHttpActionResult GetMovieByTitleFromAPI(string t) //This Method gets a movie from the database
         {
             MovieService movieService = new MovieService();
-            Movie movieResponse = movieService.GetMovieFromAPIAsync(t).Result;
-            if (movieResponse != null) 
+            MovieDetail movieResponse = movieService.GetMovieFromAPIAsync(t).Result;
+            if (movieResponse != null)
             {           //At this point, we should have our movie, we now need to add it to the database
-                //Console.WriteLine(response.Content.ReadAsStringAsync().Result);
 
                 //Movie movieResponse = response.Content.ReadAsAsync<Movie>().Result;
+
 
                 return Ok(movieResponse);
             }
@@ -34,9 +44,13 @@ namespace Movease.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-
+            var service = CreateMovieService();
+            if (!service.CreateMovie(movie))
+                return InternalServerError();
 
             return Ok();
         }
+
+
     }
 }
