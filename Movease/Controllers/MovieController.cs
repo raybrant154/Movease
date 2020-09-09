@@ -28,10 +28,9 @@ namespace Movease.Controllers
             MovieService movieService = new MovieService();
             MovieDetail movieResponse = movieService.GetMovieFromAPIAsync(t).Result;
             if (movieResponse != null)
-            {           //At this point, we should have our movie, we now need to add it to the database
+            {
 
                 //Movie movieResponse = response.Content.ReadAsAsync<Movie>().Result;
-
 
                 return Ok(movieResponse);
             }
