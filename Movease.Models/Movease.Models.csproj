@@ -73,10 +73,7 @@
   <ItemGroup>
     <Compile Include="CommentModel\CommentEdit.cs" />
     <Compile Include="MoviesModel\MovieEdit.cs" />
-
-
     <Compile Include="MoviesModel\MovieListItem.cs" />
-
     <Compile Include="MyMoviesCollectionListItem.cs" />
     <Compile Include="MyMoviesCollectionModel\MyMoviesCollectionCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,7 +85,6 @@
     <Compile Include="CommentModel\CommentDetail.cs" />
     <Compile Include="CommentModel\CommentListItem.cs" />
     <Compile Include="MoviesModel\MovieDetail.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserModel\UserCreate.cs" />
     <Compile Include="UserModel\UserDetail.cs" />
     <Compile Include="UserModel\UserListItem.cs" />
