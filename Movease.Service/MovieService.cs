@@ -37,10 +37,42 @@ namespace Movease.Service
 
         }
 
-        //public MovieDetail GetMovieByTitleAsync(string title)
-        //{
-            
-        //}
+        public IEnumerable<MovieListItem> GetMoviesFromDB()
+        {
+            using(var movie = new ApplicationDbContext())
+            {
+                var query =
+                    movie
+                        .Movies
+                        .Where(e => e.UserId == _userId)
+                        .Select(
+                            e =>
+                                new MovieListItem
+                                {
+                                    MovieId = e.MovieId,
+                                    Title = e.Title
+                                }
+                         );
+                return query.ToArray();
+            }
+        }
+
+        public MovieDetail GetMovieFromDBById(int id)
+        {
+            using(var movie = new ApplicationDbContext())
+            {
+                var entity =
+                    movie
+                        .Movies
+                        .Single(e => e.MovieId == id && e.UserId == _userId);
+                return
+                    new MovieDetail
+                    {
+                        MovieId = entity.MovieId,
+                        Title = entity.Title
+                    };
+            }
+        }
 
         public bool CreateMovie(MovieCreate model)
         {

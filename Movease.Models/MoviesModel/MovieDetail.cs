@@ -9,6 +9,8 @@ namespace Movease.Models.MoviesModel
 {
     public class MovieDetail
     {
+        public int MovieId { get; set; }
+
         [JsonProperty("Title")]
         public string Title { get; set; }
 
