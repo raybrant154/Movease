@@ -315,7 +315,7 @@
       <Name>Movease.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Movease.Models\Movease.Models.csproj">
-      <Project>{4845386c-7a80-492e-88dc-570a61e94b09}</Project>
+      <Project>{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}</Project>
       <Name>Movease.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Movease.Service\Movease.Service.csproj">

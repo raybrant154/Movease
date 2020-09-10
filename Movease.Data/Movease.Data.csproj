@@ -96,17 +96,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comment.cs" />
+    <Compile Include="Migrations\202009092006404_InitialMigration.cs" />
+    <Compile Include="Migrations\202009092006404_InitialMigration.Designer.cs">
+      <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyMovies.cs" />
+    <Compile Include="MyMoviesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202009091545007_movieclass.cs" />
-    <Compile Include="Migrations\202009091545007_movieclass.Designer.cs">
-      <DependentUpon>202009091545007_movieclass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
@@ -115,8 +116,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009091545007_movieclass.resx">
-      <DependentUpon>202009091545007_movieclass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009092006404_InitialMigration.resx">
+      <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

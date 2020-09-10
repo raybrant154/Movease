@@ -7,13 +7,13 @@ namespace Movease.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class movieclass : IMigrationMetadata
+    public sealed partial class InitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(movieclass));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009091545007_movieclass"; }
+            get { return "202009092006404_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

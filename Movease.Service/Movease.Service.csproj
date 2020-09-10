@@ -89,7 +89,7 @@
       <Name>Movease.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Movease.Models\Movease.Models.csproj">
-      <Project>{4845386C-7A80-492E-88DC-570A61E94B09}</Project>
+      <Project>{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}</Project>
       <Name>Movease.Models</Name>
     </ProjectReference>
   </ItemGroup>

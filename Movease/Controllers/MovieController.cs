@@ -2,7 +2,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Movease.Data;
 ﻿using Microsoft.VisualBasic.Devices;
-using Movease.Models.MoviesModel;
+
 using Movease.Service;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Movease.Models.MoviesModel;
 
 namespace Movease.Controllers
 {
