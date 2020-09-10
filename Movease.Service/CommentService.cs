@@ -1,5 +1,6 @@
 ﻿using Movease.Data;
 using Movease.Models;
+using Movease.Models.CommentModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,6 +70,34 @@ namespace Movease.Service
                         Id = entity.Id,
                         Text = entity.Text
                     };
+            }
+        }
+
+        public bool UpdateComment(CommentEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Comments
+                        .Single(e => e.Id == model.Id && e.UserId == _userId);
+                entity.Text = model.Text;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteComment(int noteId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Comments
+                        .Single(e => e.Id == noteId && e.UserId == _userId);
+
+                ctx.Comments.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
