@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Movease.Models
 {
-    class MyMoviesCollectionListItem
+    class MyMovieCollectionListItem
     {
     }
 }

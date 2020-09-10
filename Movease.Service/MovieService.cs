@@ -50,7 +50,6 @@ namespace Movease.Service
                     Title = model.Title,
                     Year = model.Year,
                     Rated = model.Rated,
-                    Released = model.Released,
                     Runtime = model.Runtime,
                     Genre = model.Genre,
                     Director = model.Director,

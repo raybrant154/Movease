@@ -101,8 +101,7 @@
       <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="MyMovies.cs" />
-    <Compile Include="MyMoviesCollection.cs" />
+    <Compile Include="MyMovieCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

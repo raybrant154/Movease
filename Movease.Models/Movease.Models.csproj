@@ -71,8 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyMoviesCollectionListItem.cs" />
-    <Compile Include="MyMoviesCollectionModel\MyMoviesCollectionCreate.cs" />
+    <Compile Include="MyMovieCollectionModel\MyMovieCollectionListItem.cs" />
+    <Compile Include="MyMovieCollectionModel\MyMovieCollectionCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

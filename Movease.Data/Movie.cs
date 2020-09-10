@@ -28,9 +28,6 @@ namespace Movease.Data
         [JsonProperty("Rated")]
         public string Rated { get; set; }
 
-        [JsonProperty("Released")]
-        public string Released { get; set; }
-
         [JsonProperty("Runtime")]
         public string Runtime { get; set; }
 
