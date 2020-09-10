@@ -14,10 +14,6 @@ namespace Movease.Data
     {
         [Key]
         public int MovieId { get; set; }
-        
-        [ForeignKey(nameof(User))]
-        public Guid UserId { get; set; }
-        public virtual User User { get; set; }
 
         [JsonProperty("Title")]
         public string Title { get; set; }
@@ -42,5 +38,9 @@ namespace Movease.Data
 
         [JsonProperty("Plot")]
         public string Plot { get; set; }
+
+        [ForeignKey(nameof(User))]
+        public Guid UserId { get; set; }
+        public virtual User User { get; set; }
     }
 }

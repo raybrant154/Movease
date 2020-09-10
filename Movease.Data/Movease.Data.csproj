@@ -100,9 +100,15 @@
     <Compile Include="Migrations\202009092006404_InitialMigration.Designer.cs">
       <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
     </Compile>
+
     <Compile Include="Migrations\202009101754141_CommentsCRUD.cs" />
     <Compile Include="Migrations\202009101754141_CommentsCRUD.Designer.cs">
       <DependentUpon>202009101754141_CommentsCRUD.cs</DependentUpon>
+
+    <Compile Include="Migrations\202009101542422_updatedMovieAndUserClass.cs" />
+    <Compile Include="Migrations\202009101542422_updatedMovieAndUserClass.Designer.cs">
+      <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyMovies.cs" />
@@ -123,8 +129,13 @@
     <EmbeddedResource Include="Migrations\202009092006404_InitialMigration.resx">
       <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Migrations\202009101754141_CommentsCRUD.resx">
       <DependentUpon>202009101754141_CommentsCRUD.cs</DependentUpon>
+
+    <EmbeddedResource Include="Migrations\202009101542422_updatedMovieAndUserClass.resx">
+      <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
