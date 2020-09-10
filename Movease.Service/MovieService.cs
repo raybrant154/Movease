@@ -69,7 +69,14 @@ namespace Movease.Service
                     new MovieDetail
                     {
                         MovieId = entity.MovieId,
-                        Title = entity.Title
+                        Title = entity.Title,
+                        Year = entity.Year,
+                        Rated = entity.Rated,
+                        Runtime = entity.Runtime,
+                        Genre = entity.Genre,
+                        Director = entity.Director,
+                        Actors = entity.Actors,
+                        Plot = entity.Plot
                     };
             }
         }
@@ -79,6 +86,7 @@ namespace Movease.Service
             var entity =
                 new Movie()
                 {
+                    UserId = _userId,
                     Title = model.Title,
                     Year = model.Year,
                     Rated = model.Rated,
@@ -89,10 +97,10 @@ namespace Movease.Service
                     Plot = model.Plot
                 };
 
-            using (var ctx = new ApplicationDbContext())
+            using (var movie = new ApplicationDbContext())
             {
-                ctx.Movies.Add(entity);
-                var changes = ctx.SaveChanges();
+                movie.Movies.Add(entity);
+                var changes = movie.SaveChanges();
                    return changes == 1;
             }
         }
