@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <ProjectGuid>{4845386C-7A80-492E-88DC-570A61E94B09}</ProjectGuid>
+    <ProjectGuid>{A7E55D55-77ED-43C5-BD3F-04A6F176B4A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Movease.Models</RootNamespace>
