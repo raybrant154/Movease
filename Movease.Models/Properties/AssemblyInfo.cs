@@ -11,9 +11,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Movease.Models")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("Movease.Models")]
-[assembly: AssemblyCopyright("Copyright © HP Inc. 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -24,7 +21,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("a7e55d55-77ed-43c5-bd3f-04a6f176b4a5")]
-[assembly: Guid("4845386c-7a80-492e-88dc-570a61e94b09")]
+//[assembly: Guid("4845386c-7a80-492e-88dc-570a61e94b09")]
 
 // Version information for an assembly consists of the following four values:
 //
