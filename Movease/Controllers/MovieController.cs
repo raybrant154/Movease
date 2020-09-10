@@ -50,6 +50,8 @@ namespace Movease.Controllers
             return Ok(movies);
         }
 
+        [HttpGet]
+        [Route("api/Movie/MovieById")]
         public IHttpActionResult GetMoviesFromDBById(int id)
         {
             MovieService movieService = CreateMovieService();
