@@ -50,16 +50,11 @@ namespace Movease.Service
                     Title = model.Title,
                     Year = model.Year,
                     Rated = model.Rated,
-                    Released = model.Released,
                     Runtime = model.Runtime,
                     Genre = model.Genre,
                     Director = model.Director,
-                    Writer = model.Writer,
                     Actors = model.Actors,
-                    Plot = model.Plot,
-                    Language = model.Language,
-                    Country = model.Country,
-                    Awards = model.Awards
+                    Plot = model.Plot
                 };
 
             using (var ctx = new ApplicationDbContext())
