@@ -26,7 +26,7 @@ namespace Movease.Controllers
 
         [HttpGet]
         [Route("api/Movie/{t}")]
-        public IHttpActionResult GetMovieByTitleFromAPI(string t) //This Method gets a movie from the database
+        public IHttpActionResult GetMovieByTitleFromAPI(string t)
         {
             MovieService movieService = new MovieService();
             MovieDetail movieResponse = movieService.GetMovieFromAPIAsync(t).Result;
