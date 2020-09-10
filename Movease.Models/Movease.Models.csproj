@@ -71,6 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MoviesModel\MovieEdit.cs" />
+    <Compile Include="MyMoviesCollectionCreate.cs" />
+    <Compile Include="MyMoviesCollection.cs" />
     <Compile Include="MyMoviesCollectionListItem.cs" />
     <Compile Include="MyMoviesCollectionModel\MyMoviesCollectionCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +91,10 @@
     <Compile Include="UserModel\UserListItem.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MovieCollectionModel\" />
+    <Folder Include="MovieListModel\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

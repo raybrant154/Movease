@@ -64,5 +64,42 @@ namespace Movease.Service
                    return changes == 1;
             }
         }
+
+        public bool UpdateMovie(MovieEdit model)
+        {
+            using(var movie = new ApplicationDbContext())
+            {
+                var entity =
+                    movie
+                        .Movies
+                        .Single(e => e.MovieId == model.MovieId && e.UserId == _userId);
+
+                entity.Title = model.Title;
+                entity.Year = model.Year;
+                entity.Rated = model.Rated;
+                entity.Runtime = model.Runtime;
+                entity.Genre = model.Genre;
+                entity.Director = model.Director;
+                entity.Actors = model.Actors;
+                entity.Plot = model.Plot;
+
+                return movie.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteMovie(int movieId)
+        {
+            using(var movie = new ApplicationDbContext())
+            {
+                var entity =
+                    movie
+                        .Movies
+                        .Single(e => e.MovieId == movieId && e.UserId == _userId);
+
+                movie.Movies.Remove(entity);
+
+                return movie.SaveChanges() == 1;
+            }
+        }
     }
 }

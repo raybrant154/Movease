@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movease.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -9,12 +10,12 @@ namespace Movease.Service
 {  //GetMovieFromAPI
     public class MyMoviesService
     {
-        private readonly Guid _userId;
+        //private readonly Guid _userId;
 
-        public MyMoviesService(Guid userId)
-        {
-            _userId = userId;
-        }
+        //public MyMoviesService(Guid userId)
+        //{
+        //    _userId = userId;
+        //}
 
         //public bool CreateMovieCollection(CollectionCreate model)
         //{
@@ -45,6 +46,7 @@ namespace Movease.Service
         //                        {
 
         //                        }
+        //                )
         //                );
         //    }
         //}
