@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9079F50A-1DCD-41C3-9647-E3C910806032}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <ProjectGuid>{52225A26-0BFB-4FCA-B3B9-35EA542A2EAB}</ProjectGuid>
+    <ProjectGuid>{9079F50A-1DCD-41C3-9647-E3C910806032}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Movease.Data</RootNamespace>
@@ -100,9 +100,9 @@
     <Compile Include="Migrations\202009092006404_InitialMigration.Designer.cs">
       <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009101754141_CommentsCRUD.cs" />
-    <Compile Include="Migrations\202009101754141_CommentsCRUD.Designer.cs">
-      <DependentUpon>202009101754141_CommentsCRUD.cs</DependentUpon>
+    <Compile Include="Migrations\202009101542422_updatedMovieAndUserClass.cs" />
+    <Compile Include="Migrations\202009101542422_updatedMovieAndUserClass.Designer.cs">
+      <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyMovies.cs" />
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="Migrations\202009092006404_InitialMigration.resx">
       <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009101754141_CommentsCRUD.resx">
-      <DependentUpon>202009101754141_CommentsCRUD.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009101542422_updatedMovieAndUserClass.resx">
+      <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

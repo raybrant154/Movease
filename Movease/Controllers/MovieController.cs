@@ -41,7 +41,27 @@ namespace Movease.Controllers
             return BadRequest(ModelState);
         }
 
-        public IHttpActionResult Post(MovieCreate movie)
+        [HttpGet]
+        [Route("api/Movie")]
+        public IHttpActionResult GetMoviesFromDB()
+        {
+            MovieService movieService = CreateMovieService();
+            var movies = movieService.GetMoviesFromDB();
+            return Ok(movies);
+        }
+
+        [HttpGet]
+        [Route("api/Movie")]
+        public IHttpActionResult GetMoviesFromDBById(int id)
+        {
+            MovieService movieService = CreateMovieService();
+            var movie = movieService.GetMovieFromDBById(id);
+            return Ok(movie);
+        }
+
+        [HttpPost]
+        [Route("api/Movie/NewMovie")]
+        public IHttpActionResult PostNewMovieToDB(MovieCreate movie)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -53,6 +73,31 @@ namespace Movease.Controllers
             return Ok();
         }
 
+        [HttpPut]
+        [Route("api/Movie/UpdateMovie")]
+        public IHttpActionResult UpdateMovieOnDB(MovieEdit movie)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            var service = CreateMovieService();
+
+            if (!service.UpdateMovie(movie))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("api/Movie/DeleteMovie")]
+        public IHttpActionResult DeleteMovieFromDB(int id)
+        {
+            var service = CreateMovieService();
+
+            if (!service.DeleteMovie(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }

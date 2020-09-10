@@ -71,8 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommentModel\CommentEdit.cs" />
     <Compile Include="MoviesModel\MovieEdit.cs" />
+    <Compile Include="MoviesModel\MovieListItem.cs" />
     <Compile Include="MyMoviesCollectionListItem.cs" />
     <Compile Include="MyMoviesCollectionModel\MyMoviesCollectionCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
