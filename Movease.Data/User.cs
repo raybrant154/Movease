@@ -20,7 +20,7 @@ namespace Movease.Data
         {
             get
             {
-                return $"{FirstName} {LastName}";
+                return FirstName + " " + LastName;
             }
         }
 
