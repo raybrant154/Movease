@@ -108,6 +108,10 @@
     <Compile Include="Migrations\202009101542422_updatedMovieAndUserClass.Designer.cs">
       <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009111521124_collection.cs" />
+    <Compile Include="Migrations\202009111521124_collection.Designer.cs">
+      <DependentUpon>202009111521124_collection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MovieOnList.cs" />
     <Compile Include="MyMovies.cs" />
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009101542422_updatedMovieAndUserClass.resx">
       <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009111521124_collection.resx">
+      <DependentUpon>202009111521124_collection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

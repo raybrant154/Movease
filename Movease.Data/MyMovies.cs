@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Movease
 {
     public class MyMovies
     {
+        [Key]
         public int MyMovieID { get; set; }
         public string ListName { get; set; }
         public string Description { get; set; }
