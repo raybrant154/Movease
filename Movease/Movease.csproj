@@ -207,6 +207,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\MovieListController.cs" />
@@ -312,7 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Movease.Data\Movease.Data.csproj">
-      <Project>{52225a26-0bfb-4fca-b3b9-35ea542a2eab}</Project>
+      <Project>{9079f50a-1dcd-41c3-9647-e3c910806032}</Project>
       <Name>Movease.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Movease.Models\Movease.Models.csproj">
@@ -320,7 +321,7 @@
       <Name>Movease.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Movease.Service\Movease.Service.csproj">
-      <Project>{e46139a4-1c02-4f8b-8381-3f0242ac3a48}</Project>
+      <Project>{EEF4B9F1-0BAD-4976-A8A7-1E349B84FC6F}</Project>
       <Name>Movease.Service</Name>
     </ProjectReference>
   </ItemGroup>
