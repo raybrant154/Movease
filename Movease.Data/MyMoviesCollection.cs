@@ -9,6 +9,7 @@ namespace Movease.Models
 {
     public class MyMoviesCollection
     {
+        [Key]
         public int CollectionId { get; set; }
         public string CollectionTitle { get; set; }
 
