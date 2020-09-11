@@ -26,6 +26,7 @@ namespace Movease.Service
                     UserId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName
+                    
 
                 };
 
@@ -48,7 +49,7 @@ namespace Movease.Service
                         e =>
                             new UserListItem
                             {
-                                FullName = e.FullName,
+                                FullName = e.FirstName + " " + e.LastName
                                 
                             }
                             );
