@@ -71,6 +71,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovieListModel\ListCreate.cs" />
+    <Compile Include="MovieListModel\ListDetail.cs" />
+    <Compile Include="MovieListModel\ListEdit.cs" />
+    <Compile Include="MovieListModel\MovieOnListItem.cs" />
     <Compile Include="MoviesModel\MovieEdit.cs" />
     <Compile Include="MoviesModel\MovieListItem.cs" />
     <Compile Include="MyMoviesCollectionListItem.cs" />
@@ -91,7 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MovieCollectionModel\" />
-    <Folder Include="MovieListModel\" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

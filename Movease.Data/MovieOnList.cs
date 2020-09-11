@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movease.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -11,12 +12,18 @@ namespace Movease.Data
     {
         public int ListId { get; set; }
 
+        [ForeignKey(nameof(User))]
+        public Guid UserId { get; set; }
+        public virtual User User { get; set; }
+
         [ForeignKey(nameof(Movie))]
         public int MovieId { get; set; }
         public virtual Movie Movie { get; set; }
 
-        //[ForeignKey(nameof(MyMoviesCollection))]
-        
+        [ForeignKey(nameof(MyMoviesCollection))]
+        public int CollectionId { get; set; }
+        public virtual MyMoviesCollection MyMoviesCollection { get; set; }
+
         [ForeignKey(nameof(Comment))]
         public int CommentId { get; set; }
         public virtual Comment Comment { get; set; }

@@ -105,6 +105,7 @@
       <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MovieOnList.cs" />
     <Compile Include="MyMovies.cs" />
     <Compile Include="MyMoviesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
