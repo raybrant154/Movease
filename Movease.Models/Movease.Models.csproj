@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyMovieCollectionModel\MyMovieCollectionDetail.cs" />
+    <Compile Include="MyMovieCollectionModel\MyMovieCollectionEdit.cs" />
     <Compile Include="MyMovieCollectionModel\MyMovieCollectionListItem.cs" />
     <Compile Include="MyMovieCollectionModel\MyMovieCollectionCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
