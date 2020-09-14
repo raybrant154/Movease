@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Movease.Models
 {
-    public class MyMoviesCollectionCreate
+    public class MyMovieCollectionCreate
     {
         public int MyMovieId { get; set; }
         public string CollectionName { get; set; }

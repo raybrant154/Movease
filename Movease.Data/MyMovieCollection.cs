@@ -1,6 +1,7 @@
 ﻿using Movease.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -9,7 +10,10 @@ namespace Movease
 {
     public class MyMovieCollection
     {
+        [Required]
         public int MyMovieId { get; set; }
+        
+        [Required]
         public string CollectionName { get; set; }
         public string Description { get; set; }
 
@@ -18,6 +22,6 @@ namespace Movease
         public virtual User User { get; set; }
 
 
-        //public Collection<MovieOnList> { get; set; }
+        //public ICollection<MovieOnList> { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Movease.Service
-{  //GetMovieFromAPI
+{  
     public class MyMovieCollectionService
     {
         private readonly Guid _userId;
@@ -19,7 +19,7 @@ namespace Movease.Service
             _userId = userId;
         }
 
-        public bool CreateMovieCollection(MyMoviesCollectionCreate model)
+        public bool CreateMovieCollection(MyMovieCollectionCreate model)
         {
             var entity =
                 new MyMovieCollection()
