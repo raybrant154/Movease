@@ -42,5 +42,9 @@ namespace Movease.Data
         [ForeignKey(nameof(User))]
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
+
+        public ICollection<MovieOnList> MovieOnLists { get; set; }
     }
 }
