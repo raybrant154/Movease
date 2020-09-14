@@ -9,7 +9,7 @@ namespace Movease
 {
     public class MyMovieCollection
     {
-        public int MyMovieID { get; set; }
+        public int MyMovieId { get; set; }
         public string CollectionName { get; set; }
         public string Description { get; set; }
 

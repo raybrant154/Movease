@@ -37,10 +37,6 @@ namespace Movease.Service
 
         }
 
-        //public MovieDetail GetMovieByTitleAsync(string title)
-        //{
-            
-        //}
 
         public bool CreateMovie(MovieCreate model)
         {

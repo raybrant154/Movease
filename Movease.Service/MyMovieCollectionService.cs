@@ -1,5 +1,6 @@
 ﻿using Movease.Data;
 using Movease.Models;
+using Movease.Models.MyMovieCollectionModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +19,12 @@ namespace Movease.Service
             _userId = userId;
         }
 
-        public bool CreateMovieCollection(CollectionCreate model)
+        public bool CreateMovieCollection(MyMoviesCollectionCreate model)
         {
             var entity =
-                new MovieCollection()
+                new MyMovieCollection()
                 {
-                    MyMovieID = model.MyMovieID,
+                    MyMovieId = model.MyMovieId,
                     CollectionName = model.CollectionName,
                     Description = model.Description,
 
@@ -31,24 +32,24 @@ namespace Movease.Service
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.MovieCollections.Add(entity);
+                ctx.MyMovieCollections.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<MovieCollectionItem> GetMovieCollections()
+        public IEnumerable<MyMovieCollectionListItem> GetMyMovieCollections()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .MyMovieCollections    //Name correct?
-                        .Where(e => e.OwnerId == _userId)
+                        .Where(e => e.??? == _userId)
                         .Select(
                             e =>
-                                new MovieCollectionItem
+                                new MyMovieCollectionListItem
                                 {
-                                    MyMovieID = e.MyMovieID,
+                                    MyMovieId = e.MyMovieId,
                                     CollectionName = e.CollectionName,
                                     Description = e.Description
                                 }
@@ -57,19 +58,55 @@ namespace Movease.Service
             }
         }
 
-        public MovieCollectionDetail GetCollectionById(int id)
+        public MyMovieCollectionDetail GetCollectionById(int id)
         {
-            var entity =
-                ctx
-                    .MyMovieCollections
-                    .Single(e => e.Id == id && e.UserId == _userId);
-            return
-                new MovieCollectionDetail
-                {
-                    MyMovieID = entity.MyMovieID,
-                    CollectionName = entity.CollectionName,
-                    Description = entity.Description
-                };
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .MyMovieCollections
+                        .Single(e => e.MyMovieId == id && e.UserId == _userId);
+                return
+                    new MyMovieCollectionDetail
+                    {
+                        MyMovieId = entity.MyMovieId,
+                        CollectionName = entity.CollectionName,
+                        Description = entity.Description
+                    };
+            }
+        }
+
+        public bool UpdateMyMovieCollection(MyMovieCollectionEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .MyMovieCollections
+                        .Single(e => e.MyMovieId == model.MyMovieId && e.??? == _userId);
+
+                entity.MyMovieId = model.MyMovieId;
+                entity.CollectionName = model.CollectionName;
+                entity.Description = model.Description;
+
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteMyMovieCollection(int MyMovieCollectionId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .MyMovieCollections
+                        .Single(e => e.MyMovieId == MyMovieCollectionId && e.??? == _userId);
+
+                ctx.MyMovieCollections.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }
