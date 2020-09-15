@@ -11,8 +11,8 @@ namespace Movease.Data
     {
         
         [Key]
-        public int Id { get; set; }
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
+        public Guid OwnerId { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

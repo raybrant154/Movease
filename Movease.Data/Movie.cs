@@ -39,11 +39,12 @@ namespace Movease.Data
         [JsonProperty("Plot")]
         public string Plot { get; set; }
 
-        [ForeignKey(nameof(User))]
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
+        //[ForeignKey(nameof(User))]
+        //public int UserId { get; set; }
+        //public virtual User User { get; set; }
+        public Guid CreatorId { get; set; }   // (person that added this to the database)
 
-        public ICollection<Comment> Comments { get; set; }
+        //public ICollection<Comment> Comments { get; set; }
 
         public ICollection<MovieOnList> MovieOnLists { get; set; }
     }

@@ -10,7 +10,6 @@ namespace Movease.Models.MovieListModel
     {
         public int MovieId { get; set; }
         public int CollectionId { get; set; }
-        public int CommentId { get; set; }
-        public int UserId { get; set; }
+        public string Comment { get; set; }
     }
 }

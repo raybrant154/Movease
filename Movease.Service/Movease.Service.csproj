@@ -78,7 +78,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <Compile Include="MovieService.cs" />
-    <Compile Include="CommentService.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -75,11 +75,8 @@
     <Compile Include="MovieListModel\ListDetail.cs" />
     <Compile Include="MovieListModel\ListEdit.cs" />
     <Compile Include="MovieListModel\MovieOnListItem.cs" />
-
-    <Compile Include="CommentModel\CommentEdit.cs" />
     <Compile Include="MoviesModel\MovieEdit.cs" />
     <Compile Include="MoviesModel\MovieListItem.cs" />
-    <Compile Include="MyMoviesCollectionListItem.cs" />
     <Compile Include="MyMoviesCollectionModel\MyMoviesCollectionCreate.cs" />
     <Compile Include="MyMovieCollectionModel\MyMovieCollectionDetail.cs" />
     <Compile Include="MyMovieCollectionModel\MyMovieCollectionEdit.cs" />
@@ -90,9 +87,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <Compile Include="MoviesModel\MovieCreate.cs" />
-    <Compile Include="CommentModel\CommentCreate.cs" />
-    <Compile Include="CommentModel\CommentDetail.cs" />
-    <Compile Include="CommentModel\CommentListItem.cs" />
     <Compile Include="MoviesModel\MovieDetail.cs" />
     <Compile Include="UserModel\UserCreate.cs" />
     <Compile Include="UserModel\UserDetail.cs" />

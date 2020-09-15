@@ -33,7 +33,7 @@ namespace Movease.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Comment> Comments { get; set; }
+        //public DbSet<Comment> Comments { get; set; }
         public DbSet<User> UserProfile { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<MovieOnList> MovieOnLists { get; set; }

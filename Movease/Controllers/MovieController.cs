@@ -17,8 +17,8 @@ namespace Movease.Controllers
     { // google routing data asp .net
         private MovieService CreateMovieService()
         {
-            var userId = int.Parse(User.Identity.GetUserId());
-            var movieService = new MovieService(userId);
+            var creatorId = Guid.Parse(User.Identity.GetUserId());
+            var movieService = new MovieService(creatorId);
             return movieService;
         }
 
