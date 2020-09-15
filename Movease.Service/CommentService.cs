@@ -11,9 +11,9 @@ namespace Movease.Service
 {
     public class CommentService
     {
-        private readonly Guid _userId;
+        private readonly int _userId;
 
-        public CommentService(Guid userId)
+        public CommentService(int userId)
         {
             _userId = userId;
         }
@@ -26,6 +26,7 @@ namespace Movease.Service
                 {
                     UserId = _userId,
                     Text = model.Text,
+                    MovieId = model.MovieId
 
                 };
 
@@ -86,14 +87,14 @@ namespace Movease.Service
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteComment(int noteId)
+        public bool DeleteComment(int commentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Comments
-                        .Single(e => e.Id == noteId && e.UserId == _userId);
+                        .Single(e => e.Id == commentId && e.UserId == _userId);
 
                 ctx.Comments.Remove(entity);
 

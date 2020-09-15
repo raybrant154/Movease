@@ -15,7 +15,7 @@ namespace Movease.Controllers
     {
         private CommentService CreateCommentService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = int.Parse(User.Identity.GetUserId());
             var CommentService = new CommentService(userId);
             return CommentService;
         }

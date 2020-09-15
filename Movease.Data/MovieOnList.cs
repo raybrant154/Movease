@@ -15,7 +15,7 @@ namespace Movease.Data
         public int ListId { get; set; }
 
         [ForeignKey(nameof(User))]
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
         public virtual User User { get; set; }
 
         [ForeignKey(nameof(Movie))]
