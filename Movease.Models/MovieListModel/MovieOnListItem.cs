@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Movease.Models
+namespace Movease.Models.MovieListModel
 {
-   public class CommentCreate
+    public class MovieOnListItem
     {
-        public string Text { get; set; }
         public int MovieId { get; set; }
+        public int CollectionId { get; set; }
+        public int CommentId { get; set; }
     }
 }

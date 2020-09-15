@@ -1,18 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Movease.Data
+namespace Movease.Models.MoviesModel
 {
-    public class Movie
+    public class MovieEdit
     {
-        [Key]
         public int MovieId { get; set; }
 
         [JsonProperty("Title")]
@@ -38,13 +34,5 @@ namespace Movease.Data
 
         [JsonProperty("Plot")]
         public string Plot { get; set; }
-
-        [ForeignKey(nameof(User))]
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
-
-        public ICollection<Comment> Comments { get; set; }
-
-        public ICollection<MovieOnList> MovieOnLists { get; set; }
     }
 }

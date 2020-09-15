@@ -9,10 +9,10 @@ namespace Movease.Models
 {
     public class MyMoviesCollection
     {
+        [Key]
         public int CollectionId { get; set; }
         public string CollectionTitle { get; set; }
 
-        [Display(Name ="Created")]
-        public DateTimeOffset CreatedUtc { get; set; }    //Not entirely sure this is needed, may need editing.
+           //Not entirely sure this is needed, may need editing.
     }
 }

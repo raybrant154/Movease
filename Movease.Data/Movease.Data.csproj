@@ -100,8 +100,28 @@
     <Compile Include="Migrations\202009092006404_InitialMigration.Designer.cs">
       <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009101542422_updatedMovieAndUserClass.cs" />
+    <Compile Include="Migrations\202009101542422_updatedMovieAndUserClass.Designer.cs">
+      <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009111521124_collection.cs" />
+    <Compile Include="Migrations\202009111521124_collection.Designer.cs">
+      <DependentUpon>202009111521124_collection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009141512585_PulledMovieClassUpdate.cs" />
+    <Compile Include="Migrations\202009141512585_PulledMovieClassUpdate.Designer.cs">
+      <DependentUpon>202009141512585_PulledMovieClassUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009141515180_UpdatedCommentClass.cs" />
+    <Compile Include="Migrations\202009141515180_UpdatedCommentClass.Designer.cs">
+      <DependentUpon>202009141515180_UpdatedCommentClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009141822386_RemovedRequiredinCommentClass.cs" />
+    <Compile Include="Migrations\202009141822386_RemovedRequiredinCommentClass.Designer.cs">
+      <DependentUpon>202009141822386_RemovedRequiredinCommentClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="MyMovies.cs" />
+    <Compile Include="MovieOnList.cs" />
     <Compile Include="MyMoviesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,7 +129,6 @@
     <None Include="App.config" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Movie.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +137,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009092006404_InitialMigration.resx">
       <DependentUpon>202009092006404_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009101542422_updatedMovieAndUserClass.resx">
+      <DependentUpon>202009101542422_updatedMovieAndUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009111521124_collection.resx">
+      <DependentUpon>202009111521124_collection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009141512585_PulledMovieClassUpdate.resx">
+      <DependentUpon>202009141512585_PulledMovieClassUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009141515180_UpdatedCommentClass.resx">
+      <DependentUpon>202009141515180_UpdatedCommentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009141822386_RemovedRequiredinCommentClass.resx">
+      <DependentUpon>202009141822386_RemovedRequiredinCommentClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
