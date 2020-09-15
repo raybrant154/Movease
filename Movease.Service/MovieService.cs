@@ -81,6 +81,7 @@ namespace Movease.Service
             }
         }
 
+
         public bool CreateMovie(MovieCreate model)
         {
             var entity =

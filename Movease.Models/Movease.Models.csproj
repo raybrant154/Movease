@@ -81,6 +81,10 @@
     <Compile Include="MoviesModel\MovieListItem.cs" />
     <Compile Include="MyMoviesCollectionListItem.cs" />
     <Compile Include="MyMoviesCollectionModel\MyMoviesCollectionCreate.cs" />
+    <Compile Include="MyMovieCollectionModel\MyMovieCollectionDetail.cs" />
+    <Compile Include="MyMovieCollectionModel\MyMovieCollectionEdit.cs" />
+    <Compile Include="MyMovieCollectionModel\MyMovieCollectionListItem.cs" />
+    <Compile Include="MyMovieCollectionModel\MyMovieCollectionCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

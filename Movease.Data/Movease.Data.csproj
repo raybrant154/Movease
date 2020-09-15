@@ -121,8 +121,9 @@
       <DependentUpon>202009141822386_RemovedRequiredinCommentClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyMovieCollection.cs" />
     <Compile Include="MovieOnList.cs" />
-    <Compile Include="MyMoviesCollection.cs" />
+    
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

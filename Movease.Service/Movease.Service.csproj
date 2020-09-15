@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="MovieListService.cs" />
     <Compile Include="MyMoviesService.cs" />
+    <Compile Include="MyMovieCollectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

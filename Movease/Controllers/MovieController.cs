@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Movease.Data;
 ﻿using Microsoft.VisualBasic.Devices;
-
 using Movease.Service;
 using System;
 using System.Collections.Generic;
