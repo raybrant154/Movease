@@ -23,11 +23,9 @@ namespace Movease.Service
             var entity =
                 new User()
                 {
-                    UserId = _userId,
+                    OwnerId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName
-                    
-
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,13 +42,12 @@ namespace Movease.Service
                 var query =
                     ctx
                         .UserProfile
-                        .Where(e => e.UserId == _userId)
+                        .Where(e => e.OwnerId == _userId)
                         .Select(
                         e =>
                             new UserListItem
                             {
-                                FullName = e.FirstName + " " + e.LastName
-                                
+                                FullName = e.FirstName + " " + e.LastName                                
                             }
                             );
                 return query.ToArray();
@@ -64,12 +61,11 @@ namespace Movease.Service
                 var entity =
                     ctx
                         .UserProfile
-                        .Single(e => e.Id == id && e.UserId == _userId);
+                        .Single(e => e.UserId == id && e.OwnerId == _userId);
                 return
                     new UserDetail
                     {
-                        FullName = entity.FullName
-                        
+                        FullName = entity.FullName                       
                     };
             }
         }

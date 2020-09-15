@@ -3,19 +3,52 @@ namespace Movease.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class movieUpdates : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.Comment",
+                "dbo.MovieOnList",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        Text = c.String(),
-                        UserId = c.Guid(nullable: false),
+                        ListId = c.Int(nullable: false, identity: true),
+                        MovieId = c.Int(nullable: false),
+                        CollectionId = c.Int(nullable: false),
+                        Comment = c.String(),
                     })
-                .PrimaryKey(t => t.Id)
+                .PrimaryKey(t => t.ListId)
+                .ForeignKey("dbo.Movie", t => t.MovieId, cascadeDelete: true)
+                .ForeignKey("dbo.MyMovieCollection", t => t.CollectionId, cascadeDelete: true)
+                .Index(t => t.MovieId)
+                .Index(t => t.CollectionId);
+            
+            CreateTable(
+                "dbo.Movie",
+                c => new
+                    {
+                        MovieId = c.Int(nullable: false, identity: true),
+                        Title = c.String(),
+                        Year = c.String(),
+                        Rated = c.String(),
+                        Runtime = c.String(),
+                        Genre = c.String(),
+                        Director = c.String(),
+                        Actors = c.String(),
+                        Plot = c.String(),
+                        CreatorId = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.MovieId);
+            
+            CreateTable(
+                "dbo.MyMovieCollection",
+                c => new
+                    {
+                        MyMovieId = c.Int(nullable: false, identity: true),
+                        CollectionName = c.String(nullable: false),
+                        Description = c.String(),
+                        UserId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.MyMovieId)
                 .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
@@ -23,36 +56,12 @@ namespace Movease.Data.Migrations
                 "dbo.User",
                 c => new
                     {
-                        UserId = c.Guid(nullable: false),
+                        UserId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        Id = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.UserId);
-            
-            CreateTable(
-                "dbo.Movie",
-                c => new
-                    {
-                        MovieId = c.Int(nullable: false, identity: true),
-                        UserId = c.Guid(nullable: false),
-                        Title = c.String(),
-                        Year = c.String(),
-                        Rated = c.String(),
-                        Released = c.String(),
-                        Runtime = c.String(),
-                        Genre = c.String(),
-                        Director = c.String(),
-                        Writer = c.String(),
-                        Actors = c.String(),
-                        Plot = c.String(),
-                        Language = c.String(),
-                        Country = c.String(),
-                        Awards = c.String(),
-                    })
-                .PrimaryKey(t => t.MovieId)
-                .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -132,22 +141,25 @@ namespace Movease.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Movie", "UserId", "dbo.User");
-            DropForeignKey("dbo.Comment", "UserId", "dbo.User");
+            DropForeignKey("dbo.MovieOnList", "CollectionId", "dbo.MyMovieCollection");
+            DropForeignKey("dbo.MyMovieCollection", "UserId", "dbo.User");
+            DropForeignKey("dbo.MovieOnList", "MovieId", "dbo.Movie");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Movie", new[] { "UserId" });
-            DropIndex("dbo.Comment", new[] { "UserId" });
+            DropIndex("dbo.MyMovieCollection", new[] { "UserId" });
+            DropIndex("dbo.MovieOnList", new[] { "CollectionId" });
+            DropIndex("dbo.MovieOnList", new[] { "MovieId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Movie");
             DropTable("dbo.User");
-            DropTable("dbo.Comment");
+            DropTable("dbo.MyMovieCollection");
+            DropTable("dbo.Movie");
+            DropTable("dbo.MovieOnList");
         }
     }
 }

@@ -12,11 +12,11 @@ namespace Movease.Service
     public class MovieService
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private readonly int _userId;
+        private readonly Guid _creatorId;
 
-        public MovieService(int userId)
+        public MovieService(Guid creatorId)
         {
-            _userId = userId;
+            _creatorId = creatorId;
         }
 
         public MovieService() { }
@@ -44,7 +44,7 @@ namespace Movease.Service
                 var query =
                     movie
                         .Movies
-                        .Where(e => e.UserId == _userId)
+                        .Where(e => e.CreatorId == _creatorId)
                         .Select(
                             e =>
                                 new MovieListItem
@@ -64,7 +64,7 @@ namespace Movease.Service
                 var entity =
                     movie
                         .Movies
-                        .Single(e => e.MovieId == id && e.UserId == _userId);
+                        .Single(e => e.MovieId == id && e.CreatorId == _creatorId);
                 return
                     new MovieDetail
                     {
@@ -81,12 +81,13 @@ namespace Movease.Service
             }
         }
 
+
         public bool CreateMovie(MovieCreate model)
         {
             var entity =
                 new Movie()
                 {
-                    UserId = _userId,
+                    CreatorId = _creatorId,
                     Title = model.Title,
                     Year = model.Year,
                     Rated = model.Rated,
@@ -112,8 +113,7 @@ namespace Movease.Service
                 var entity =
                     movie
                         .Movies
-                        .Single(e => e.MovieId == model.MovieId && e.UserId == _userId);
-
+                        .Single(e => e.MovieId == model.MovieId && e.CreatorId == _creatorId);
                 entity.Title = model.Title;
                 entity.Year = model.Year;
                 entity.Rated = model.Rated;
@@ -134,8 +134,7 @@ namespace Movease.Service
                 var entity =
                     movie
                         .Movies
-                        .Single(e => e.MovieId == movieId && e.UserId == _userId);
-
+                        .Single(e => e.MovieId == movieId && e.CreatorId == _creatorId);
                 movie.Movies.Remove(entity);
 
                 return movie.SaveChanges() == 1;

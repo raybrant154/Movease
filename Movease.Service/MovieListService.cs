@@ -11,22 +11,21 @@ namespace Movease.Service
 {
     public class MovieListService
     {
-        private readonly int _userId;
+        private readonly Guid _ownerId;
 
-        public MovieListService(int userId)
+        public MovieListService(Guid ownerId)
         {
-            _userId = userId;
+            _ownerId = ownerId;
         }
 
         public bool CreateMovieList(ListCreate model)
         {
             var entity =
                 new MovieOnList()
-                {
-                    UserId = model.UserId,
+                {                    
                     MovieId = model.MovieId,
                     CollectionId = model.CollectionId,
-                    CommentId = model.CommentId
+                    Comment = model.Comment
                 };
 
             using (var movieList = new ApplicationDbContext())
@@ -43,14 +42,14 @@ namespace Movease.Service
                 var query =
                     movieList
                         .MovieOnLists
-                        .Where(e => e.UserId == _userId)
+                        .Where(e => e.MyMoviesCollection.User.OwnerId == _ownerId)
                         .Select(
                         e =>
                             new MovieOnListItem
                             {
                                 MovieId = e.MovieId,
                                 CollectionId = e.CollectionId,
-                                CommentId = e.CommentId
+                                Comment = e.Comment
                             }
                         );
                 return query.ToArray();
@@ -64,14 +63,14 @@ namespace Movease.Service
                 var entity =
                     movieList
                         .MovieOnLists
-                        .Single(e => e.ListId == id && e.UserId == _userId);
+                        .Single(e => e.ListId == id && e.MyMoviesCollection.User.OwnerId == _ownerId);
                 return
                     new ListDetail
                     {
                         ListId = entity.ListId,
                         MovieId = entity.MovieId,
                         CollectionId = entity.CollectionId,
-                        CommentId = entity.CommentId
+                        Comment = entity.Comment
                     };
             }
         }
@@ -83,11 +82,11 @@ namespace Movease.Service
                 var entity =
                     movieList
                         .MovieOnLists
-                        .Single(e => e.ListId == model.ListId && e.UserId == _userId);
+                        .Single(e => e.ListId == model.ListId && e.MyMoviesCollection.User.OwnerId == _ownerId);
 
                 entity.MovieId = model.MovieId;
                 entity.CollectionId = model.CollectionId;
-                entity.CommentId = model.CommentId;
+                entity.Comment = model.Comment;
 
                 return movieList.SaveChanges() == 1;
             }
@@ -100,10 +99,9 @@ namespace Movease.Service
                 var entity =
                     movieList
                         .MovieOnLists
-                        .Single(e => e.ListId == listId && e.UserId == _userId);
+                        .Single(e => e.ListId == listId && e.MyMoviesCollection.User.OwnerId == _ownerId);
 
                 movieList.MovieOnLists.Remove(entity);
-
                 return movieList.SaveChanges() == 1;
             }
         }
