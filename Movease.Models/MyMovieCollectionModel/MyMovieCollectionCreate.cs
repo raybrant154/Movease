@@ -12,12 +12,8 @@ namespace Movease.Models
 {
     public class MyMovieCollectionCreate
     {
-        public int MyMovieId { get; set; }
+        public int UserId { get; set; }
         public string CollectionName { get; set; }
         public string Description { get; set; }
-
-        [ForeignKey(nameof(User))]
-        public Guid UserId { get; set; }
-        public virtual User User { get; set; }
     }
 }

@@ -15,8 +15,8 @@ namespace Movease.Controllers
     {
         private MyMovieCollectionService CreateMyMovieCollectionService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var myMovieCollectionService = new MyMovieCollectionService(userId);
+            var ownerId = Guid.Parse(User.Identity.GetUserId());
+            var myMovieCollectionService = new MyMovieCollectionService(ownerId);
             return myMovieCollectionService;
         }
 

@@ -26,8 +26,6 @@ namespace Movease.Service
                     OwnerId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName
-                    
-
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -49,8 +47,7 @@ namespace Movease.Service
                         e =>
                             new UserListItem
                             {
-                                FullName = e.FirstName + " " + e.LastName
-                                
+                                FullName = e.FirstName + " " + e.LastName                                
                             }
                             );
                 return query.ToArray();
@@ -68,8 +65,7 @@ namespace Movease.Service
                 return
                     new UserDetail
                     {
-                        FullName = entity.FullName
-                        
+                        FullName = entity.FullName                       
                     };
             }
         }
