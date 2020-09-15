@@ -9,13 +9,14 @@ namespace Movease.Data
 {
    public class User
     {
+        
         [Key]
+        public int Id { get; set; }
         public Guid UserId { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        public int Id { get; set; }
         public string FullName
         {
             get

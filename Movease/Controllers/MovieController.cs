@@ -1,4 +1,3 @@
-
 ﻿using Microsoft.AspNet.Identity;
 using Movease.Data;
 ﻿using Microsoft.VisualBasic.Devices;
@@ -19,7 +18,7 @@ namespace Movease.Controllers
     { // google routing data asp .net
         private MovieService CreateMovieService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = int.Parse(User.Identity.GetUserId());
             var movieService = new MovieService(userId);
             return movieService;
         }

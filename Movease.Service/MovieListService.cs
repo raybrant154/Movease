@@ -11,9 +11,9 @@ namespace Movease.Service
 {
     public class MovieListService
     {
-        private readonly Guid _userId;
+        private readonly int _userId;
 
-        public MovieListService(Guid userId)
+        public MovieListService(int userId)
         {
             _userId = userId;
         }
@@ -23,7 +23,7 @@ namespace Movease.Service
             var entity =
                 new MovieOnList()
                 {
-                    UserId = _userId,
+                    UserId = model.UserId,
                     MovieId = model.MovieId,
                     CollectionId = model.CollectionId,
                     CommentId = model.CommentId

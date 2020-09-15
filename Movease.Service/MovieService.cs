@@ -12,9 +12,9 @@ namespace Movease.Service
     public class MovieService
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private readonly Guid _userId;
+        private readonly int _userId;
 
-        public MovieService(Guid userId)
+        public MovieService(int userId)
         {
             _userId = userId;
         }
