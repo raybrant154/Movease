@@ -12,11 +12,11 @@ namespace Movease.Service
 {  
     public class MyMovieCollectionService
     {
-        private readonly Guid _userId;  //int userId?
+        private readonly Guid _ownerId;
 
-        public MyMovieCollectionService(Guid userId)  //int userId?
+        public MyMovieCollectionService(Guid ownerId)
         {
-            _userId = userId;
+            _ownerId = ownerId;
         }
 
         public bool CreateMovieCollection(MyMovieCollectionCreate model)
@@ -24,10 +24,9 @@ namespace Movease.Service
             var entity =
                 new MyMovieCollection()
                 {
-                    MyMovieId = model.MyMovieId,
+                    UserId = model.UserId,
                     CollectionName = model.CollectionName,
                     Description = model.Description,
-
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -43,8 +42,8 @@ namespace Movease.Service
             {
                 var query =
                     ctx
-                        .MyMovieCollections    //Name correct?
-                        .Where(e => e.User.OwnerId == _userId)
+                        .MyMovieCollections
+                        .Where(e => e.User.OwnerId == _ownerId)
                         .Select(
                             e =>
                                 new MyMovieCollectionListItem
@@ -65,7 +64,7 @@ namespace Movease.Service
                 var entity =
                     ctx
                         .MyMovieCollections
-                        .Single(e => e.MyMovieId == id && e.User.OwnerId == _userId);
+                        .Single(e => e.MyMovieId == id && e.User.OwnerId == _ownerId);
                 return
                     new MyMovieCollectionDetail
                     {
@@ -83,7 +82,7 @@ namespace Movease.Service
                 var entity =
                     ctx
                         .MyMovieCollections
-                        .Single(e => e.MyMovieId == model.MyMovieId && e.User.OwnerId == _userId);
+                        .Single(e => e.MyMovieId == model.MyMovieId && e.User.OwnerId == _ownerId);
 
                 entity.MyMovieId = model.MyMovieId;
                 entity.CollectionName = model.CollectionName;
@@ -101,8 +100,8 @@ namespace Movease.Service
                 var entity =
                     ctx
                         .MyMovieCollections
-                        .Single(e => e.MyMovieId == MyMovieCollectionId && e.User.OwnerId == _userId);
-
+                        .Single(e => e.MyMovieId == MyMovieCollectionId && e.User.OwnerId == _ownerId);
+                //.Single(e => e.MyMovieId == MyMovieCollectionId && e.User.OwnerId == _userId);
                 ctx.MyMovieCollections.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

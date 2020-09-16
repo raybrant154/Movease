@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace Movease.Data
 {
    public class User
-    {
-        
+    {        
         [Key]
         public int UserId { get; set; }
         public Guid OwnerId { get; set; }

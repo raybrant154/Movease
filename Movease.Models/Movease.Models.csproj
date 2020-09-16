@@ -90,6 +90,7 @@
     <Compile Include="MoviesModel\MovieDetail.cs" />
     <Compile Include="UserModel\UserCreate.cs" />
     <Compile Include="UserModel\UserDetail.cs" />
+    <Compile Include="UserModel\UserEdit.cs" />
     <Compile Include="UserModel\UserListItem.cs" />
   </ItemGroup>
   <ItemGroup>

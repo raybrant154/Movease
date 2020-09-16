@@ -16,8 +16,8 @@ namespace Movease.Controllers
     {
         private MyMovieCollectionService CreateMyMovieCollectionService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var myMovieCollectionService = new MyMovieCollectionService(userId);
+            var ownerId = Guid.Parse(User.Identity.GetUserId());
+            var myMovieCollectionService = new MyMovieCollectionService(ownerId);
             return myMovieCollectionService;
         }
 
@@ -41,13 +41,6 @@ namespace Movease.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Get(int id)
-        {
-            MyMovieCollectionService myMovieCollectionService = CreateMyMovieCollectionService();
-            var MyMovieCollection = myMovieCollectionService.GetCollectionById(id);
-            return Ok(MyMovieCollection);
-        }
-
         public IHttpActionResult Put(MyMovieCollectionEdit myMovieCollection)
         {
             if (!ModelState.IsValid)
@@ -59,7 +52,7 @@ namespace Movease.Controllers
                 return InternalServerError();
 
             return Ok();
-                
+
         }
 
         public IHttpActionResult Delete(int id)

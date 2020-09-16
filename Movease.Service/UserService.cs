@@ -1,5 +1,6 @@
 ﻿using Movease.Data;
 using Movease.Models;
+using Movease.Models.UserModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +27,6 @@ namespace Movease.Service
                     OwnerId = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName
-                    
-
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -49,8 +48,7 @@ namespace Movease.Service
                         e =>
                             new UserListItem
                             {
-                                FullName = e.FirstName + " " + e.LastName
-                                
+                                FullName = e.FirstName + " " + e.LastName                                
                             }
                             );
                 return query.ToArray();
@@ -68,9 +66,37 @@ namespace Movease.Service
                 return
                     new UserDetail
                     {
-                        FullName = entity.FullName
-                        
+                        FullName = entity.FullName                       
                     };
+            }
+        }
+
+        public bool UpdateUser(UserEdit model)
+        {
+            using(var user = new ApplicationDbContext())
+            {
+                var entity =
+                    user
+                    .UserProfile
+                    .Single(e => e.UserId == model.UserId && e.OwnerId == _userId);
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+
+                return user.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteUser(int userId)
+        {
+            using (var user = new ApplicationDbContext())
+            {
+                var entity =
+                    user
+                        .UserProfile
+                        .Single(e => e.UserId == userId && e.OwnerId == _userId);
+                user.UserProfile.Remove(entity);
+
+                return user.SaveChanges() == 1;
             }
         }
     }

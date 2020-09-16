@@ -11,11 +11,11 @@ namespace Movease.Service
 {
     public class MovieListService
     {
-        private readonly int _userId;
+        private readonly Guid _ownerId;
 
-        public MovieListService(int userId)
+        public MovieListService(Guid ownerId)
         {
-            _userId = userId;
+            _ownerId = ownerId;
         }
 
         public bool CreateMovieList(ListCreate model)
@@ -42,7 +42,7 @@ namespace Movease.Service
                 var query =
                     movieList
                         .MovieOnLists
-                        .Where(e => e.MyMoviesCollection.UserId == _userId)
+                        .Where(e => e.MyMoviesCollection.User.OwnerId == _ownerId)
                         .Select(
                         e =>
                             new MovieOnListItem
@@ -63,7 +63,7 @@ namespace Movease.Service
                 var entity =
                     movieList
                         .MovieOnLists
-                        .Single(e => e.ListId == id && e.MyMoviesCollection.UserId == _userId);
+                        .Single(e => e.ListId == id && e.MyMoviesCollection.User.OwnerId == _ownerId);
                 return
                     new ListDetail
                     {
@@ -82,7 +82,7 @@ namespace Movease.Service
                 var entity =
                     movieList
                         .MovieOnLists
-                        .Single(e => e.ListId == model.ListId && e.MyMoviesCollection.UserId == _userId);
+                        .Single(e => e.ListId == model.ListId && e.MyMoviesCollection.User.OwnerId == _ownerId);
 
                 entity.MovieId = model.MovieId;
                 entity.CollectionId = model.CollectionId;
@@ -99,7 +99,7 @@ namespace Movease.Service
                 var entity =
                     movieList
                         .MovieOnLists
-                        .Single(e => e.ListId == listId && e.MyMoviesCollection.UserId == _userId);
+                        .Single(e => e.ListId == listId && e.MyMoviesCollection.User.OwnerId == _ownerId);
 
                 movieList.MovieOnLists.Remove(entity);
                 return movieList.SaveChanges() == 1;
