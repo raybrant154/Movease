@@ -12,9 +12,9 @@ namespace Movease.Service
 {  
     public class MyMovieCollectionService
     {
-        private readonly Guid _userId;
+        private readonly Guid _userId;  //int userId?
 
-        public MyMovieCollectionService(Guid userId)
+        public MyMovieCollectionService(Guid userId)  //int userId?
         {
             _userId = userId;
         }
