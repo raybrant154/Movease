@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Movease.Models;
+using Movease.Models.MyMovieCollectionModel;
 using Movease.Service;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,30 @@ namespace Movease.Controllers
             var service = CreateMyMovieCollectionService();
 
             if (!service.CreateMovieCollection(myMovieCollection))
+                return InternalServerError();
+
+            return Ok();
+        }
+
+        public IHttpActionResult Put(MyMovieCollectionEdit myMovieCollection)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateMyMovieCollectionService();
+
+            if (!service.UpdateMyMovieCollection(myMovieCollection))
+                return InternalServerError();
+
+            return Ok();
+
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateMyMovieCollectionService();
+
+            if (!service.DeleteMyMovieCollection(id))
                 return InternalServerError();
 
             return Ok();
