@@ -21,6 +21,8 @@ namespace Movease.Controllers
             return myMovieCollectionService;
         }
 
+        [HttpGet]
+        [Route("api/MyMovieCollection")]
         public IHttpActionResult Get()
         {
             MyMovieCollectionService myMovieCollectionService = CreateMyMovieCollectionService();
@@ -28,6 +30,8 @@ namespace Movease.Controllers
             return Ok(MyMovieCollections);
         }
 
+        [HttpPost]
+        [Route("api/MyMovieCollection/NewMyMovieCollection")]
         public IHttpActionResult Post(MyMovieCollectionCreate myMovieCollection)
         {
             if (!ModelState.IsValid)
@@ -41,6 +45,8 @@ namespace Movease.Controllers
             return Ok();
         }
 
+        [HttpPut]
+        [Route("api/MyMovieCollection/UpdateMyMovieCollection")]
         public IHttpActionResult Put(MyMovieCollectionEdit myMovieCollection)
         {
             if (!ModelState.IsValid)
@@ -55,6 +61,8 @@ namespace Movease.Controllers
 
         }
 
+        [HttpDelete]
+        [Route("api/MyMovieCollection/DeleteMyMovieCollection")]
         public IHttpActionResult Delete(int id)
         {
             var service = CreateMyMovieCollectionService();
